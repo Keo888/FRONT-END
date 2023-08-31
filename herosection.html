@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            background-color: blue;
+            padding: 10px;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            display: inline-block;
+            background-color: gray;
+            color: whitesmoke;
+            font-weight: bold;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: lightblue;
+        }
+
+        .about,
+        .portfolio {
+            background-color: blue;
+            padding: 10px;
+        }
+
+        .content-container {
+            text-align: center;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .hi {
+            color: grey;
+            font-weight: bolder;
+            font-size: 5rem;
+            margin: 80px 0 0 0;
+            margin-left: 570px;
+            width: 40%;
+            text-align: left;
+        }
+
+        .name {
+            color: whitesmoke;
+            font-weight: bold;
+            font-size: 5rem;
+            margin: 0 0 0 570px;
+            width: 90%;
+            text-align: left;
+        }
+
+        .hiblue {
+            color: rgb(88, 53, 131);
+            font-weight: bold;
+            font-size: 2rem;
+            width: 50%;
+            margin-left: 570px;
+            text-align: left;
+        }
+
+        .hi2 {
+            color: whitesmoke;
+            font-weight: bold;
+            font-size: 1.5rem;
+            width: 55%;
+            margin-left: 570px;
+            text-align: left;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: gray;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-left: -292px;
+        }
+
+        .btn:hover {
+            background-color: lightblue;
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-items {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: blue;
+                width: 100%;
+            }
+
+            .nav-items.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-nav">
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
+        <div class="nav-items" id="navItems">
+            <div class="nav-item about">About</div>
+            <div class="nav-item portfolio">Portfolio</div>
+            <div class="nav-item top-nav-title">Home</div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="content">
+            <p class="hi">Hi there,</p>
+            <p class="name">I'm Keosha Sanderson</p>
+            <p class="hiblue">A UX & UI designer based in South Africa</p>
+            <p class="hi2">I instruct software to look good by creating buttons, icons, and layouts that are easy to use
+                by choosing colours, fonts, and images to make things visually appealing. I focus heavily on how the
+                software feels and works for users by making sure that the use of the software is smooth and enjoyable,
+                as well as deciding how buttons behave and how menus flow. In a nutshell, I create digital experiences
+                that are both visually pleasing and user-friendly.</p>
+            <button class="btn" id="talkBtn">Let's Talk</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const talkButton = document.getElementById('talkBtn');
+            const menuIcon = document.getElementById('menuIcon');
+            const navItems = document.getElementById('navItems');
+
+            talkButton.addEventListener('click', function () {
+                alert('Button clicked! You can add more functionality here.');
+            });
+
+            menuIcon.addEventListener('click', function () {
+                navItems.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
